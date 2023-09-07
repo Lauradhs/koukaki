@@ -1,0 +1,161 @@
+/*
+Theme Name: foce-child
+Template: foce
+*/
+.banner {
+  opacity: 0;
+  animation: banner 1500ms ease-in-out forwards;
+}
+
+@keyframes banner {
+  0% {
+    transform: translateY(-20%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+.banner img {
+  opacity: 0;
+  animation: bannerImg 1500ms ease-in-out forwards;
+}
+
+@keyframes bannerImg {
+  0% {
+    transform: translateY(40%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+section.story {
+  opacity: 0;
+  animation: story 1500ms ease-in-out forwards;
+}
+
+@keyframes story {
+  0% {
+    transform: translateY(10%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+section#studio {
+  opacity: 0;
+  animation: studio 1500ms ease-in-out forwards;
+}
+
+@keyframes studio {
+  0% {
+    transform: translateY(30%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+footer {
+  opacity: 0;
+  animation: footer 1500ms ease-in-out forwards;
+}
+
+@keyframes footer {
+  0% {
+    transform: translateY(30%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+@keyframes rotating {
+  100% {
+    transform: rotate(1turn);
+  }
+}
+.site-footer::after,
+.site-footer ul::after,
+.site-footer::before,
+.story__article::after,
+#studio h2::before,
+#studio h2::after,
+.story h2::after,
+.fleur {
+  animation: rotating 20s normal linear infinite;
+}
+
+h2 {
+  opacity: 1;
+  transition: 2s;
+}
+
+.titlescroll {
+  opacity: 0;
+}
+
+.nomination {
+  position: relative;
+  padding: 150px 0 50px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.nomination__title {
+  position: relative;
+}
+
+.nomination__title img {
+  height: 100%;
+}
+
+.nomination__title h3 {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  line-height: 3.2rem;
+  text-align: left;
+}
+
+.nomination img {
+  height: 100%;
+}
+
+.banner {
+  position: relative;
+  -o-object-fit: contain;
+     object-fit: contain;
+  height: 800px;
+  background-image: none;
+}
+
+.banner__background {
+  z-index: -2;
+  opacity: 1;
+}
+
+.banner__video {
+  z-index: 1;
+  opacity: 1;
+}
+
+.banner__background,
+.banner__video {
+  position: absolute;
+}
+
+.banner__logo {
+  z-index: 10;
+  opacity: 1;
+}/*# sourceMappingURL=style.css.map */
