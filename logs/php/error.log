@@ -36,3 +36,47 @@ Stack trace:
 #14 C:\Users\laura\Local Sites\koukaki\app\public\index.php(17): require('C:\\Users\\laura\\...')
 #15 {main}
   thrown in C:\Users\laura\Local Sites\koukaki\app\public\wp-includes\class-wp-hook.php on line 310
+[12-Sep-2023 14:55:55 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function wwp_enqueue_style() in C:\Users\laura\Local Sites\koukaki\app\public\wp-content\themes\foce-child\functions.php:6
+Stack trace:
+#0 C:\Users\laura\Local Sites\koukaki\app\public\wp-includes\class-wp-hook.php(310): theme_enqueue_styles('')
+#1 C:\Users\laura\Local Sites\koukaki\app\public\wp-includes\class-wp-hook.php(334): WP_Hook->apply_filters(NULL, Array)
+#2 C:\Users\laura\Local Sites\koukaki\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#3 C:\Users\laura\Local Sites\koukaki\app\public\wp-includes\script-loader.php(2225): do_action('wp_enqueue_scri...')
+#4 C:\Users\laura\Local Sites\koukaki\app\public\wp-includes\class-wp-hook.php(310): wp_enqueue_scripts('')
+#5 C:\Users\laura\Local Sites\koukaki\app\public\wp-includes\class-wp-hook.php(334): WP_Hook->apply_filters(NULL, Array)
+#6 C:\Users\laura\Local Sites\koukaki\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#7 C:\Users\laura\Local Sites\koukaki\app\public\wp-includes\general-template.php(3053): do_action('wp_head')
+#8 C:\Users\laura\Local Sites\koukaki\app\public\wp-content\themes\foce-child\header.php(23): wp_head()
+#9 C:\Users\laura\Local Sites\koukaki\app\public\wp-includes\template.php(785): require_once('C:\\Users\\laura\\...')
+#10 C:\Users\laura\Local Sites\koukaki\app\public\wp-includes\template.php(720): load_template('C:\\Users\\laura\\...', true, Array)
+#11 C:\Users\laura\Local Sites\koukaki\app\public\wp-includes\general-template.php(48): locate_template(Array, true, true, Array)
+#12 C:\Users\laura\Local Sites\koukaki\app\public\wp-content\themes\foce-child\front-page.php(3): get_header()
+#13 C:\Users\laura\Local Sites\koukaki\app\public\wp-includes\template-loader.php(106): include('C:\\Users\\laura\\...')
+#14 C:\Users\laura\Local Sites\koukaki\app\public\wp-blog-header.php(19): require_once('C:\\Users\\laura\\...')
+#15 C:\Users\laura\Local Sites\koukaki\app\public\index.php(17): require('C:\\Users\\laura\\...')
+#16 {main}
+  thrown in C:\Users\laura\Local Sites\koukaki\app\public\wp-content\themes\foce-child\functions.php on line 6
+[18-Sep-2023 08:44:33 UTC] PHP Warning:  Undefined variable $characters_query in C:\Users\laura\Local Sites\koukaki\app\public\wp-content\themes\foce-child\slider.php on line 9
+[18-Sep-2023 08:44:33 UTC] PHP Fatal error:  Uncaught Error: Call to a member function have_posts() on null in C:\Users\laura\Local Sites\koukaki\app\public\wp-content\themes\foce-child\slider.php:9
+Stack trace:
+#0 C:\Users\laura\Local Sites\koukaki\app\public\wp-includes\template.php(787): require()
+#1 C:\Users\laura\Local Sites\koukaki\app\public\wp-includes\template.php(720): load_template('C:\\Users\\laura\\...', false, Array)
+#2 C:\Users\laura\Local Sites\koukaki\app\public\wp-includes\general-template.php(206): locate_template(Array, true, false, Array)
+#3 C:\Users\laura\Local Sites\koukaki\app\public\wp-content\themes\foce-child\front-page.php(27): get_template_part('slider', 'slider')
+#4 C:\Users\laura\Local Sites\koukaki\app\public\wp-includes\template-loader.php(106): include('C:\\Users\\laura\\...')
+#5 C:\Users\laura\Local Sites\koukaki\app\public\wp-blog-header.php(19): require_once('C:\\Users\\laura\\...')
+#6 C:\Users\laura\Local Sites\koukaki\app\public\index.php(17): require('C:\\Users\\laura\\...')
+#7 {main}
+  thrown in C:\Users\laura\Local Sites\koukaki\app\public\wp-content\themes\foce-child\slider.php on line 9
+[18-Sep-2023 08:44:33 UTC] PHP Warning:  Undefined variable $characters_query in C:\Users\laura\Local Sites\koukaki\app\public\wp-content\themes\foce-child\slider.php on line 9
+[18-Sep-2023 08:44:33 UTC] PHP Fatal error:  Uncaught Error: Call to a member function have_posts() on null in C:\Users\laura\Local Sites\koukaki\app\public\wp-content\themes\foce-child\slider.php:9
+Stack trace:
+#0 C:\Users\laura\Local Sites\koukaki\app\public\wp-includes\template.php(787): require()
+#1 C:\Users\laura\Local Sites\koukaki\app\public\wp-includes\template.php(720): load_template('C:\\Users\\laura\\...', false, Array)
+#2 C:\Users\laura\Local Sites\koukaki\app\public\wp-includes\general-template.php(206): locate_template(Array, true, false, Array)
+#3 C:\Users\laura\Local Sites\koukaki\app\public\wp-content\themes\foce-child\front-page.php(27): get_template_part('slider', 'slider')
+#4 C:\Users\laura\Local Sites\koukaki\app\public\wp-includes\template-loader.php(106): include('C:\\Users\\laura\\...')
+#5 C:\Users\laura\Local Sites\koukaki\app\public\wp-blog-header.php(19): require_once('C:\\Users\\laura\\...')
+#6 C:\Users\laura\Local Sites\koukaki\app\public\index.php(17): require('C:\\Users\\laura\\...')
+#7 {main}
+  thrown in C:\Users\laura\Local Sites\koukaki\app\public\wp-content\themes\foce-child\slider.php on line 9

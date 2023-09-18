@@ -5,60 +5,31 @@ get_header();
 
 <main id="primary" class="site-main">
     <section class="banner">
-        <img class="banner__background" src="<?php echo get_theme_file_uri() . '/assets/images/banner.png'; ?>" alt="">
+        <img class="banner__background hidden" src="<?php echo get_theme_file_uri() . '/banner.png'; ?>" alt="">
         <video class="banner__video" width="1440" autoplay="autoplay" muted="" loop="infinite">
             <source src="<?php echo get_theme_file_uri() . '\Studio+Koukaki-vidéo+header+sans+son+(1).mp4'; ?>"
                 type="video/mp4">
         </video>
-        <img class="banner__logo" src="<?php echo get_theme_file_uri() . '/Image logo en paralax.png'; ?>"
+        <img class="banner__logo hidden" src="<?php echo get_theme_file_uri() . '/Image logo en paralax.png'; ?>"
             alt="Logo fleurs d'oranger & chats errants">
     </section>
-    <section id="story" class="story">
-        <h2>L'histoire</h2>
+
+    <section id="story" class="story hidden">
+        <h2><span class="story__title slide1 hidden">L'histoire</span></h2>
         <article id="" class="story__article">
             <p>
                 <?php echo get_theme_mod('story'); ?>
             </p>
         </article>
+        
+    
         <?php
-        $args = array(
-            'post_type' => 'characters',
-            'posts_per_page' => -1,
-            'meta_key' => '_main_char_field',
-            'orderby' => 'meta_value_num',
-
-        );
-        $characters_query = new WP_Query($args);
+        get_template_part('slider');
         ?>
-        <article id="characters">
-            <div class="main-character">
-                <h3>Les personnages</h3>
-                <?php
-                $main_character = $characters_query->posts[0];
-                echo '<figure>';
-                echo get_the_post_thumbnail($main_character->ID, 'full');
-                echo '<figcaption>' . $main_character->post_title . '</figcaption>';
-                echo '</figure>';
-                $characters_query->next_post();
-                ?>
-            </div>
-            <div class="other-characters">
-                <?php
-                while ($characters_query->have_posts()) {
-                    $characters_query->the_post();
-                    echo '<figure>';
-                    echo get_the_post_thumbnail(get_the_ID(), 'full');
-                    echo '<figcaption>';
-                    the_title();
-                    echo '</figcaption>';
-                    echo '</figure>';
-                }
-                ?>
-            </div>
-        </article>
-        <article id="place">
-            <div>
-                <h3>Le Lieu</h3>
+
+        <article id="place" class="place hidden">
+            <div class="place">
+                <h3><span class="place__title slide1 hidden">Le Lieu</span></h3>
                 <p>
                     <?php echo get_theme_mod('place'); ?>
                 </p>
@@ -68,9 +39,9 @@ get_header();
     </section>
 
 
-    <section id="studio">
-        <h2 class="title"><span>S</span><span>t</span><span>u</span><span>d</span><span>i</span><span>o</span>
-            <span>K</span><span>o</span><span>u</span><span>k</span><span>a</span><span>k</span><span>i</span></h2>
+    <section id="studio" class="studio hidden">
+        <h2><span class="studio__title slide1 hidden">Studio</span><span class="studio__title slide2 hidden">
+                Koukaki</span></h2>
         <div>
             <p>Acteur majeur de l’animation, Koukaki est un studio intégré fondé en 2012 qui créé, produit et distribue
                 des programmes originaux dans plus de 190 pays pour les enfants et les adultes. Nous avons deux sections
@@ -86,6 +57,8 @@ get_header();
 
     <!-- inclus section oscars -->
     <?php get_template_part('/oscars'); ?>
+
+
 
 </main><!-- #main -->
 
