@@ -5,9 +5,6 @@ window.onload = () => {
   // Démarrez la vidéo
   video.play();
 
-  // Masquer la vidéo au chargement de la page
-  video.style.display = "block";
-
   const handleIntersect = (entries) => {
     entries.forEach(function (entry) {
       // Contrôle si l'élément à observer

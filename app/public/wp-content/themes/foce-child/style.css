@@ -452,4 +452,67 @@ h2 {
   animation: rotateModalFlowers var(--rotate) linear infinite;
 }
 
-/* Effet parallax *//*# sourceMappingURL=style.css.map */
+/* Mobile */
+/* CSS pour masquer la vidéo sur les appareils mobiles */
+@media (max-width: 934px) {
+  .banner__video {
+    display: none !important;
+  }
+  #place .place--big_cloud,
+  #place .place--little_cloud,
+  .site-footer::after,
+  .site-footer ul::after,
+  .story__article::after,
+  #studio h2::before,
+  #studio h2::after,
+  .story h2::after,
+  .fleur,
+  .modal__content::after,
+  .modal__content--story::after,
+  .modal__content--characters::after,
+  .modal__content--place::after,
+  .modal__content--footer::after,
+  .modal__content--open::after,
+  .modal__content--footer::before,
+  .modal__content--place::before,
+  .modal__content--story::before {
+    display: none;
+  }
+  .swiper-container {
+    width: 100vw;
+    overflow: hidden;
+    margin-top: 50px;
+    margin-bottom: 0px;
+  }
+  figcaption {
+    padding-bottom: 150px;
+  }
+  .story #characters {
+    height: 500px;
+  }
+}
+@media all and (max-width: 934px) {
+  .main-navigation {
+    height: 80px;
+  }
+  .banner__logo {
+    top: -8vw;
+    left: 30vw;
+  }
+  .banner__background {
+    width: 350px;
+  }
+  .main-navigation ul {
+    display: flex !important;
+  }
+  h2 {
+    font-size: 2.4rem;
+  }
+  h3 {
+    font-size: 2rem;
+  }
+  .nomination h3 {
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+  }
+}/*# sourceMappingURL=style.css.map */
