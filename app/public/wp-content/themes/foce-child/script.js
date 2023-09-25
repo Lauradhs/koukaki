@@ -37,7 +37,7 @@ window.onload = () => {
           elementName === "story__title slide1 hidden" ||
           elementName === "studio__title slide1 hidden" ||
           elementName === "studio__title slide2 hidden" ||
-          elementName === "characters__title slide1 hidden" ||
+          elementName === "characters__title hidden" ||
           elementName === "place__title slide1 hidden"
         ) {
           entry.target.classList.add("animatedTitle");
@@ -48,7 +48,7 @@ window.onload = () => {
     });
   };
 
-  const ratio = 0.05;
+  const ratio = 0.07;
   // Initialisation de l'option pour la fonction IntersectionObserver
   // ratio : % qui doit être visible de l'élement avant de déclencher l'action
   const options = {
@@ -92,18 +92,26 @@ window.addEventListener("scroll", () => {
   }, 500);
 });
 
-// Effet parallax
+// Effet parallax vidéo et logo
+
+window.addEventListener('scroll', function () {
+  const parallaxBack = document.querySelector('.parallax'); // Utilisez querySelector pour sélectionner un élément unique
+  const scrollValue = window.scrollY;
+  parallaxBack.style.transform = `translateY(${scrollValue * 0.5}px)`;
+  
+});
+
 
 
 // swiper
 
-var swiper = new Swiper('.swiper-container', {
+var swiper = new Swiper(".swiper-container", {
   effect: "coverflow",
   loop: true,
   autoplay: {
-    delay: 2500
+    delay: 2500,
   },
-  slidesPerView: 'auto', // Afficher le nombre d'images souhaité dans le conteneur
+  slidesPerView: "3", // Afficher le nombre d'images souhaité dans le conteneur
   centeredSlides: true, // Centrer les slides
   coverflowEffect: {
     rotate: 50, // Angle de rotation des slides
@@ -114,3 +122,52 @@ var swiper = new Swiper('.swiper-container', {
   },
 });
 
+// nuage
+// On bouge les 2 nuages en fonction du scroll
+
+window.addEventListener("scroll", function () {
+  let posX = Math.round(0 - (window.scrollY - place.offsetTop - 200));
+  if (posX <= 0 && posX > -400) {
+    document.documentElement.style.setProperty("--posX", posX + "px");
+  }
+});
+
+// Gestion de la fermeture et de l'ouverture de la modale
+document.addEventListener("DOMContentLoaded", function () {
+  const modalOpenButtons = document.querySelectorAll(".modal-open");
+  const modalContent = document.querySelector(".modal__content");
+  const modalBurger = document.querySelector(".modal__burger");
+
+  // Masquer la modal au démarrage
+  modalContent.style.maxHeight = "0";
+  modalContent.style.opacity = "0";
+  modalContent.classList.add("menu-hidden");
+
+  modalOpenButtons.forEach(function (button) {
+    button.addEventListener("click", function () {
+      toggleModal();
+    });
+  });
+
+  document.querySelectorAll("a").forEach(function (link) {
+    link.addEventListener("click", function () {
+      if (modalContent.classList.contains("open")) {
+        toggleModal();
+      }
+    });
+  });
+
+  function toggleModal() {
+    if (modalContent.classList.contains("open")) {
+      modalContent.style.maxHeight = "0";
+      modalContent.style.opacity = "0";
+      modalContent.classList.add("menu-hidden");
+    } else {
+      modalContent.style.maxHeight = "none";
+      modalContent.style.opacity = "1";
+      modalContent.classList.remove("menu-hidden");
+    }
+    modalContent.classList.toggle("open");
+    modalBurger.classList.toggle("close");
+  }
+});

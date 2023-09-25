@@ -5,13 +5,14 @@ get_header();
 
 <main id="primary" class="site-main">
     <section class="banner">
-        <img class="banner__background hidden" src="<?php echo get_theme_file_uri() . '/banner.png'; ?>" alt="">
+        <img class="banner__background hidden" src="<?php echo get_theme_file_uri() . '/medias/banner.png'; ?>" alt="">
         <video class="banner__video" width="1440" autoplay="autoplay" muted="" loop="infinite">
-            <source src="<?php echo get_theme_file_uri() . '\Studio+Koukaki-vidéo+header+sans+son+(1).mp4'; ?>"
+            <source src="<?php echo get_theme_file_uri() . '\medias\Studio+Koukaki-vidéo+header+sans+son+(1).mp4'; ?>"
                 type="video/mp4">
         </video>
-        <img class="banner__logo hidden" src="<?php echo get_theme_file_uri() . '/Image logo en paralax.png'; ?>"
-            alt="Logo fleurs d'oranger & chats errants">
+        <div class="parallax">
+        <img class="banner__logo hidden" src="<?php echo get_theme_file_uri() . '/medias/Image logo en paralax.png'; ?>"
+            alt="Logo fleurs d'oranger & chats errants"></div>
     </section>
 
     <section id="story" class="story hidden">
@@ -21,13 +22,18 @@ get_header();
                 <?php echo get_theme_mod('story'); ?>
             </p>
         </article>
-        
-    
+
+
         <?php
         get_template_part('slider');
         ?>
 
         <article id="place" class="place hidden">
+            <img class="place--big_cloud" src="<?php echo get_theme_file_uri() . '/medias/big_cloud.png'; ?>"
+                alt="Gros nuage qui passe">
+            <img class="place--little_cloud"
+                src="<?php echo get_theme_file_uri() . '/medias/little_cloud.png'; ?>"
+                alt="Petit nuage qui passe">
             <div class="place">
                 <h3><span class="place__title slide1 hidden">Le Lieu</span></h3>
                 <p>

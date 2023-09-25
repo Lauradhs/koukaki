@@ -33,8 +33,7 @@ Template: foce
   }
 }
 
-.slide1
- {
+.slide1 {
   display: inline-block;
   opacity: 0;
   animation-delay: 800ms;
@@ -53,28 +52,10 @@ Template: foce
   animation-fill-mode: forwards;
 }
 
-@keyframes rotating {
-  100% {
-    transform: rotate(1turn);
-  }
-}
-
-.site-footer::after,
-.site-footer ul::after,
-.site-footer::before,
-.story__article::after,
-#studio h2::before,
-#studio h2::after,
-.story h2::after,
-.fleur {
-  animation: rotating var(--rotate) linear infinite;
-}
-
 h2 {
   opacity: 1;
   transition: 2s;
 }
-
 
 .nomination {
   position: relative;
@@ -111,7 +92,7 @@ h2 {
   object-fit: contain;
   height: 800px;
   background-image: none;
-  overflow: hidden; /* Cache le débordement de la vidéo */
+  overflow: hidden;
 }
 
 .banner__background {
@@ -128,7 +109,7 @@ h2 {
   0% {
     transform: translateY(-300px);
     opacity: 0;
-  }  
+  }
   100% {
     transform: translateY(0);
     visibility: visible;
@@ -140,46 +121,52 @@ h2 {
   position: absolute;
   bottom: 0px;
   left: 0px;
-  min-width: 1440px !important;  
+  min-width: 1440px !important;
   animation: move-down 2s 300ms both;
 }
 
 .banner__logo {
-  position: absolute;
-  transform: translateX(-50%); /* Centrer horizontalement le logo */
+  position: relative;
   opacity: 1;
   z-index: 2; /*logo au-dessus de la vidéo */
-  animation: move-up 2s 300ms both, float 6s 2s infinite ease-in-out;  
+  animation: move-up 2s 300ms both, float 6s 2s infinite ease-in-out;
+  top: 25px;
+  left: 380px;
+}
+
+.parallax {
+  z-index: 2;
+  width: 100%;
 }
 
 /* Pour faire flotter les éléments */
 @keyframes float {
   0% {
-    transform: translate3d(6px,6px,0);
+    transform: translate3d(6px, 6px, 0);
   }
   12% {
-    transform: translate3d(0px,6px,0);
+    transform: translate3d(0px, 6px, 0);
   }
   24% {
-    transform: translate3d(6px,-4px,0);
+    transform: translate3d(6px, -4px, 0);
   }
   36% {
-    transform: translate3d(6px,0px,0);
+    transform: translate3d(6px, 0px, 0);
   }
   48% {
-    transform: translate3d(-4px,-6px,0);
+    transform: translate3d(-4px, -6px, 0);
   }
   60% {
-    transform: translate3d(0px,-4px,0);
+    transform: translate3d(0px, -4px, 0);
   }
   72% {
-    transform: translate3d(-8px,6px,0);
+    transform: translate3d(-8px, 6px, 0);
   }
   84% {
-    transform: translate3d(-4px,0px,0);
+    transform: translate3d(-4px, 0px, 0);
   }
   100% {
-    transform: translate3d(6px,6px,0); 
+    transform: translate3d(6px, 6px, 0);
   }
 }
 
@@ -205,4 +192,282 @@ h2 {
   align-items: center;
 }
 
+.story #characters {
+  width: 100%;
+  height: 600px;
+  margin: 0;
+  display: block;
+}
 
+.story #characters div {
+  flex: unset;
+  flex-shrink: 0;
+}
+
+// nuages
+
+.story #place {
+  position: relative;
+  background-image: url("http://koukaki.local/wp-content/themes/foce-child/medias/Studio_Koukaki-image_place.png");
+  z-index: -1;
+}
+
+#place .place--big_cloud,
+#place .place--little_cloud {
+  position: absolute;
+  filter: blur(12px);
+  -webkit-filter: blur(12px);
+  -moz-filter: blur(12px);
+  z-index: 2;
+}
+
+#place .place--big_cloud {
+  height: 122px;
+  top: 70px;
+  right: 90px;
+  transform: translateX(var(--posX));
+}
+
+#place .place--little_cloud {
+  height: 55px;
+  top: 250px;
+  right: 500px;
+  transform: translateX(var(--posX));
+}
+
+// Menu
+
+.menu-hidden {
+  display: none !important;
+}
+
+.main-navigation.toggled ul {
+  display: flex !important;
+}
+
+#site-navigation {
+  position: relative;
+}
+
+.modal__burger {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  gap: 8px;
+  width: 40px;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  top: 0;
+  right: 3em;
+  cursor: pointer;
+}
+
+.modal__burger .line {
+  height: 2px;
+  background-color: #000;
+  display: block;
+  width: 100%;
+  margin: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Création du bouton pour fermer */
+.modal__burger.close .line:nth-child(2) {
+  opacity: 0;
+}
+
+.modal__burger.close .line:first-child {
+  transform: rotate(45deg) translate3d(8px, 6px, 0);
+}
+
+.modal__burger.close span.line:last-child {
+  transform: rotate(-45deg) translate3d(8px, -6px, 0);
+}
+
+// modal
+.modal {
+  font-family: "Roboto Mono", monospace;
+  font-size: 0.4rem;
+  font-weight: 400;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.modal h2,
+.modal li > a {
+  font-size: 3.1rem;
+}
+
+.modal .modal__content {
+  position: relative;
+  width: 100%;
+  height: 91vh;
+  background: #fff5e9;
+  font-size: 3em;
+}
+
+.modal__content--logo {
+  margin: 40px;
+  width: 154px;
+  filter: drop-shadow(0px 0px 10px rgba(255, 92, 0, 0.6));
+  -webkit-filter: drop-shadow(0px 0px 10px rgba(255, 92, 0, 0.6));
+  -moz-filter: drop-shadow(0px 0px 10px rgba(255, 92, 0, 0.6));
+}
+
+.modal__content ul {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  height: 300px;
+  gap: 1em;
+}
+
+.modal__content li > a:hover {
+  filter: drop-shadow(0px 0px 5px #ff5c00);
+  -webkit-filter: drop-shadow(0px 0px 5px #ff5c00);
+  -moz-filter: drop-shadow(0px 0px 5px #ff5c00);
+}
+
+.modal__content--footer {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 40px;
+}
+
+// chats modal
+.modal__content--story::before {
+  content: url("http://koukaki.local/wp-content/themes/foce-child/medias/cat1.png");
+  position: absolute;
+  right: 20em;
+  bottom: -3em;
+  animation: float 7s 100ms infinite ease-in-out;
+}
+
+.modal__content--place::before {
+  content: url("http://koukaki.local/wp-content/themes/foce-child/medias/cat2.png");
+  position: absolute;
+  left: 20em;
+  top: -4em;
+  animation: float 6s 200ms infinite ease-in-out;
+}
+
+.modal__content--footer::before {
+  content: url("http://koukaki.local/wp-content/themes/foce-child/medias/cat3.png");
+  position: absolute;
+  right: 30em;
+  bottom: 0;
+  animation: float 5s 300ms infinite ease-in-out;
+}
+
+// fleurs modal
+.modal__content::after {
+  content: url("http://koukaki.local/wp-content/themes/foce-child/medias/orchid.png");
+  position: absolute;
+  left: -1em;
+  top: 3em;
+}
+
+.modal__content--story::after {
+  content: url("http://koukaki.local/wp-content/themes/foce-child/medias/Sunflower.png");
+  position: absolute;
+  left: 24em;
+  bottom: -2em;
+}
+
+.modal__content--characters::after {
+  content: url("http://koukaki.local/wp-content/themes/foce-child/medias/Random Flower.png");
+  position: absolute;
+  left: 55em;
+  top: -2em;
+}
+
+.modal__content--place::after {
+  content: url("http://koukaki.local/wp-content/themes/foce-child/medias/flower.png");
+  position: absolute;
+  right: 28em;
+  top: -2em;
+}
+
+.modal__content--footer::after {
+  content: url("http://koukaki.local/wp-content/themes/foce-child/medias/Hibiscus footer.png");
+  position: absolute;
+  left: 635px;
+  bottom: -6em;
+}
+
+// fleurs
+
+@keyframes rotating {
+  100% {
+    transform: rotate(1turn);
+  }
+}
+
+.site-footer::after,
+.site-footer ul::after,
+.site-footer::before,
+.story__article::after,
+#studio h2::before,
+#studio h2::after,
+.story h2::after,
+.fleur {
+  animation: rotating var(--rotate) linear infinite;
+}
+
+// Ajustements pour qu'elles puissent tourner rond */
+
+/* Sunflower.png */
+.story h2::after,
+.site-footer::before {
+  width: 154px;
+  height: 154px;
+}
+
+/* random_flower.png */
+#studio h2::before {
+  width: 203px;
+  height: 203px;
+}
+
+/* flower.png */
+#studio h2::after {
+  width: 109px;
+  height: 109px;
+}
+
+/* orchid.png */
+.site-footer::after {
+  width: 173px;
+  height: 173px;
+}
+
+/* Hibiscus.png */
+.story__article::after {
+  width: 188px;
+  height: 188px;
+}
+
+/* Animation de rotation pour les fleurs modal */
+@keyframes rotateModalFlowers {
+  100% {
+    transform: rotate(1turn);
+  }
+}
+
+.modal__content::after,
+.modal__content--story::after,
+.modal__content--characters::after,
+.modal__content--place::after,
+.modal__content--footer::after {
+  animation: rotateModalFlowers var(--rotate) linear infinite;
+}
+
+/* Effet parallax */
