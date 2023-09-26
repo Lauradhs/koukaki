@@ -40,14 +40,14 @@
                 <div class="modal__content">
                     <img class="modal__content--logo" src="<?php echo get_theme_file_uri() . '/medias/logo.png'; ?>" alt="">
                     <ul>
-                        <li class="modal__content--story flower cat"><a href="#story">Histoire</a></li>
-                        <li class="modal__content--characters flower cat"><a href="#characters">Personnages</a></li>
-                        <li class="modal__content--place flower cat"><a href="#place">Lieu</a></li>
-                        <li class="modal__content--studio flower cat"><a href="#studio">Studio Koukaki</a>
+                        <li class="modal__content--story"><a href="#story">Histoire</a></li>
+                        <li class="modal__content--characters"><a href="#characters">Personnages</a></li>
+                        <li class="modal__content--place"><a href="#place">Lieu</a></li>
+                        <li class="modal__content--studio"><a href="#studio">Studio Koukaki</a>
                         </li>
                     </ul>
 
-                    <div class="modal__content--footer modal-trigger flower cat">
+                    <div class="modal__content--footer modal-trigger">
                         <a href="#">STUDIO KOUKAKI</a></li>
                     </div>
 

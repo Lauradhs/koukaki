@@ -1,17 +1,10 @@
+$font-family_1: "Roboto Mono", monospace;
+$background-color_1: #000;
+
 /*
 Theme Name: foce-child
 Template: foce
 */
-
-.hidden {
-  opacity: 0;
-}
-
-.fade-in {
-  animation: move-up 2s 300ms both;
-}
-
-/* Pour faire apparaitre les éléments en montant et avec augmentatation de l'opacité */
 @keyframes move-up {
   0% {
     transform: translateY(600px);
@@ -21,7 +14,6 @@ Template: foce
     transform: translateY(0);
   }
 }
-
 @keyframes slideInWords {
   from {
     transform: translateY(200%);
@@ -32,79 +24,6 @@ Template: foce
     opacity: 1;
   }
 }
-
-.slide1 {
-  display: inline-block;
-  opacity: 0;
-  animation-delay: 800ms;
-}
-
-.slide2 {
-  display: inline-block;
-  opacity: 0;
-  animation-delay: 1s;
-}
-
-.animatedTitle {
-  animation-name: slideInWords;
-  animation-duration: 800ms;
-  animation-timing-function: ease;
-  animation-fill-mode: forwards;
-}
-
-h2 {
-  opacity: 1;
-  transition: 2s;
-}
-
-.nomination {
-  position: relative;
-  padding: 150px 0 50px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 40px 0;
-  justify-content: center;
-  align-items: center;
-}
-
-.nomination__title {
-  position: relative;
-}
-
-.nomination__title img {
-  height: 100%;
-}
-
-.nomination__title h3 {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  line-height: 3.2rem;
-  text-align: left;
-}
-
-.nomination img {
-  height: 100%;
-}
-
-.banner {
-  position: relative;
-  object-fit: contain;
-  height: 800px;
-  background-image: none;
-  overflow: hidden;
-}
-
-.banner__background {
-  z-index: -2;
-  opacity: 1;
-}
-
-.banner__video {
-  z-index: 1;
-  opacity: 1;
-}
-
 @keyframes move-down {
   0% {
     transform: translateY(-300px);
@@ -115,31 +34,6 @@ h2 {
     visibility: visible;
   }
 }
-
-.banner__background,
-.banner__video {
-  position: absolute;
-  bottom: 0px;
-  left: 0px;
-  min-width: 1440px !important;
-  animation: move-down 2s 300ms both;
-}
-
-.banner__logo {
-  position: relative;
-  opacity: 1;
-  z-index: 2; /*logo au-dessus de la vidéo */
-  animation: move-up 2s 300ms both, float 6s 2s infinite ease-in-out;
-  top: 25px;
-  left: 380px;
-}
-
-.parallax {
-  z-index: 2;
-  width: 100%;
-}
-
-/* Pour faire flotter les éléments */
 @keyframes float {
   0% {
     transform: translate3d(6px, 6px, 0);
@@ -169,9 +63,104 @@ h2 {
     transform: translate3d(6px, 6px, 0);
   }
 }
-
-// Swiper
-
+@keyframes rotating {
+  100% {
+    transform: rotate(1turn);
+  }
+}
+@keyframes rotateModalFlowers {
+  100% {
+    transform: rotate(1turn);
+  }
+}
+.hidden {
+  opacity: 0;
+}
+.fade-in {
+  animation: move-up 2s 300ms both;
+}
+.slide1 {
+  display: inline-block;
+  opacity: 0;
+  animation-delay: 800ms;
+}
+.slide2 {
+  display: inline-block;
+  opacity: 0;
+  animation-delay: 1s;
+}
+.animatedTitle {
+  animation-name: slideInWords;
+  animation-duration: 800ms;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+}
+h2 {
+  opacity: 1;
+  transition: 2s;
+}
+.nomination {
+  position: relative;
+  padding: 150px 0 50px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px 0;
+  justify-content: center;
+  align-items: center;
+  img {
+    height: 100%;
+  }
+}
+.nomination__title {
+  position: relative;
+  img {
+    height: 100%;
+  }
+  h3 {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    line-height: 3.2rem;
+    text-align: left;
+  }
+}
+.banner {
+  position: relative;
+  object-fit: contain;
+  height: 800px;
+  background-image: none;
+  overflow: hidden;
+}
+.banner__background {
+  z-index: -2;
+  opacity: 1;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  min-width: 1440px !important;
+  animation: move-down 2s 300ms both;
+}
+.banner__video {
+  z-index: 1;
+  opacity: 1;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  min-width: 1440px !important;
+  animation: move-down 2s 300ms both;
+}
+.banner__logo {
+  position: relative;
+  opacity: 1;
+  z-index: 2;
+  animation: move-up 2s 300ms both, float 6s 2s infinite ease-in-out;
+  top: 25px;
+  left: 380px;
+}
+.parallax {
+  z-index: 2;
+  width: 100%;
+}
 .swiper-container {
   width: 100%;
   height: 300px;
@@ -179,7 +168,6 @@ h2 {
   padding-top: 7em;
   margin-bottom: 7em;
 }
-
 .swiper-slide {
   background-position: center;
   background-size: cover;
@@ -191,64 +179,65 @@ h2 {
   justify-content: center;
   align-items: center;
 }
-
-.story #characters {
-  width: 100%;
-  height: 600px;
-  margin: 0;
-  display: block;
+.story {
+  #characters {
+    width: 100%;
+    height: 600px;
+    margin: 0;
+    display: block;
+    div {
+      flex: unset;
+      flex-shrink: 0;
+    }
+  }
+  #place {
+    position: relative;
+    background-image: url("http://koukaki.local/wp-content/themes/foce-child/medias/Studio_Koukaki-image_place.png");
+    z-index: -1;
+  }
+  h2 {
+    &::after {
+      animation: rotating var(--rotate) linear infinite;
+      width: 154px;
+      height: 154px;
+    }
+  }
 }
-
-.story #characters div {
-  flex: unset;
-  flex-shrink: 0;
+#place {
+  .place--big_cloud {
+    position: absolute;
+    filter: blur(12px);
+    -webkit-filter: blur(12px);
+    -moz-filter: blur(12px);
+    z-index: 2;
+    height: 122px;
+    top: 70px;
+    right: 90px;
+    transform: translateX(var(--posX));
+  }
+  .place--little_cloud {
+    position: absolute;
+    filter: blur(12px);
+    -webkit-filter: blur(12px);
+    -moz-filter: blur(12px);
+    z-index: 2;
+    height: 55px;
+    top: 250px;
+    right: 500px;
+    transform: translateX(var(--posX));
+  }
 }
-
-// nuages
-
-.story #place {
-  position: relative;
-  background-image: url("http://koukaki.local/wp-content/themes/foce-child/medias/Studio_Koukaki-image_place.png");
-  z-index: -1;
-}
-
-#place .place--big_cloud,
-#place .place--little_cloud {
-  position: absolute;
-  filter: blur(12px);
-  -webkit-filter: blur(12px);
-  -moz-filter: blur(12px);
-  z-index: 2;
-}
-
-#place .place--big_cloud {
-  height: 122px;
-  top: 70px;
-  right: 90px;
-  transform: translateX(var(--posX));
-}
-
-#place .place--little_cloud {
-  height: 55px;
-  top: 250px;
-  right: 500px;
-  transform: translateX(var(--posX));
-}
-
-// Menu
-
 .menu-hidden {
   display: none !important;
 }
-
-.main-navigation.toggled ul {
-  display: flex !important;
+.main-navigation.toggled {
+  ul {
+    display: flex !important;
+  }
 }
-
 #site-navigation {
   position: relative;
 }
-
 .modal__burger {
   position: absolute;
   display: flex;
@@ -263,54 +252,54 @@ h2 {
   top: 0;
   right: 3em;
   cursor: pointer;
+  .line {
+    height: 2px;
+    background-color: $background-color_1;
+    display: block;
+    width: 100%;
+    margin: 0;
+    transition: all 0.3s ease-in-out;
+  }
 }
-
-.modal__burger .line {
-  height: 2px;
-  background-color: #000;
-  display: block;
-  width: 100%;
-  margin: 0;
-  transition: all 0.3s ease-in-out;
+.modal__burger.close {
+  .line {
+    &:nth-child(2) {
+      opacity: 0;
+    }
+    &:first-child {
+      transform: rotate(45deg) translate3d(8px, 6px, 0);
+    }
+  }
+  span.line {
+    &:last-child {
+      transform: rotate(-45deg) translate3d(8px, -6px, 0);
+    }
+  }
 }
-
-/* Création du bouton pour fermer */
-.modal__burger.close .line:nth-child(2) {
-  opacity: 0;
-}
-
-.modal__burger.close .line:first-child {
-  transform: rotate(45deg) translate3d(8px, 6px, 0);
-}
-
-.modal__burger.close span.line:last-child {
-  transform: rotate(-45deg) translate3d(8px, -6px, 0);
-}
-
-// modal
 .modal {
-  font-family: "Roboto Mono", monospace;
+  font-family: $font-family_1;
   font-size: 0.4rem;
   font-weight: 400;
   display: flex;
   justify-content: center;
   text-align: center;
   overflow: hidden;
+  h2 {
+    font-size: 3.1rem;
+  }
+  li {
+    > a {
+      font-size: 3.1rem;
+    }
+  }
+  .modal__content {
+    position: relative;
+    width: 100%;
+    height: 91vh;
+    background: #fff5e9;
+    font-size: 3em;
+  }
 }
-
-.modal h2,
-.modal li > a {
-  font-size: 3.1rem;
-}
-
-.modal .modal__content {
-  position: relative;
-  width: 100%;
-  height: 91vh;
-  background: #fff5e9;
-  font-size: 3em;
-}
-
 .modal__content--logo {
   margin: 40px;
   width: 154px;
@@ -318,231 +307,266 @@ h2 {
   -webkit-filter: drop-shadow(0px 0px 10px rgba(255, 92, 0, 0.6));
   -moz-filter: drop-shadow(0px 0px 10px rgba(255, 92, 0, 0.6));
 }
-
-.modal__content ul {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  height: 300px;
-  gap: 1em;
+.modal__content {
+  ul {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    height: 300px;
+    gap: 1em;
+  }
+  li {
+    > a {
+      &:hover {
+        filter: drop-shadow(0px 0px 5px #ff5c00);
+        -webkit-filter: drop-shadow(0px 0px 5px #ff5c00);
+        -moz-filter: drop-shadow(0px 0px 5px #ff5c00);
+      }
+    }
+  }
+  &::after {
+    content: url("http://koukaki.local/wp-content/themes/foce-child/medias/orchid.png");
+    position: absolute;
+    left: -1em;
+    top: 3em;
+    width: 172.57px;
+    height: 168.24px;
+    top: 152px;
+    left: -59px;
+    animation: rotateModalFlowers var(--rotate) linear infinite;
+  }
 }
-
-.modal__content li > a:hover {
-  filter: drop-shadow(0px 0px 5px #ff5c00);
-  -webkit-filter: drop-shadow(0px 0px 5px #ff5c00);
-  -moz-filter: drop-shadow(0px 0px 5px #ff5c00);
-}
-
 .modal__content--footer {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
   bottom: 40px;
-}
-
-// chats modal
-.modal__content--story::before {
-  content: url("http://koukaki.local/wp-content/themes/foce-child/medias/cat1.png");
-  position: absolute;
-  right: 20em;
-  bottom: -3em;
-  animation: float 7s 100ms infinite ease-in-out;
-}
-
-.modal__content--place::before {
-  content: url("http://koukaki.local/wp-content/themes/foce-child/medias/cat2.png");
-  position: absolute;
-  left: 20em;
-  top: -4em;
-  animation: float 6s 200ms infinite ease-in-out;
-}
-
-.modal__content--footer::before {
-  content: url("http://koukaki.local/wp-content/themes/foce-child/medias/cat3.png");
-  position: absolute;
-  right: 30em;
-  bottom: 0;
-  animation: float 5s 300ms infinite ease-in-out;
-}
-
-// fleurs modal
-.modal__content::after {
-  content: url("http://koukaki.local/wp-content/themes/foce-child/medias/orchid.png");
-  position: absolute;
-  left: -1em;
-  top: 3em;
-}
-
-.modal__content--story::after {
-  content: url("http://koukaki.local/wp-content/themes/foce-child/medias/Sunflower.png");
-  position: absolute;
-  left: 24em;
-  bottom: -2em;
-}
-
-.modal__content--characters::after {
-  content: url("http://koukaki.local/wp-content/themes/foce-child/medias/Random Flower.png");
-  position: absolute;
-  left: 55em;
-  top: -2em;
-}
-
-.modal__content--place::after {
-  content: url("http://koukaki.local/wp-content/themes/foce-child/medias/flower.png");
-  position: absolute;
-  right: 28em;
-  top: -2em;
-}
-
-.modal__content--footer::after {
-  content: url("http://koukaki.local/wp-content/themes/foce-child/medias/Hibiscus footer.png");
-  position: absolute;
-  left: 635px;
-  bottom: -6em;
-}
-
-// fleurs
-
-@keyframes rotating {
-  100% {
-    transform: rotate(1turn);
+  &::before {
+    content: url("http://koukaki.local/wp-content/themes/foce-child/medias/cat3.png");
+    position: absolute;
+    right: 30em;
+    bottom: 0;
+    animation: float 5s 300ms infinite ease-in-out;
+  }
+  &::after {
+    content: url("http://koukaki.local/wp-content/themes/foce-child/medias/Hibiscus footer.png");
+    position: absolute;
+    bottom: -23em;
+    right: -55em;
+    animation: rotateModalFlowers var(--rotate) linear infinite;
   }
 }
-
-
-.site-footer::after,
-.site-footer ul::after,
-.site-footer::before,
-.story__article::after,
-#studio h2::before,
-#studio h2::after,
-.story h2::after,
+.modal__content--story {
+  &::before {
+    content: url("http://koukaki.local/wp-content/themes/foce-child/medias/cat1.png");
+    position: absolute;
+    right: 20em;
+    bottom: -3em;
+    animation: float 7s 100ms infinite ease-in-out;
+  }
+  &::after {
+    content: url("http://koukaki.local/wp-content/themes/foce-child/medias/Sunflower.png");
+    position: absolute;
+    left: 24em;
+    bottom: -2em;
+    width: 216px;
+    height: 216px;
+    animation: rotateModalFlowers var(--rotate) linear infinite;
+  }
+}
+.modal__content--place {
+  &::before {
+    content: url("http://koukaki.local/wp-content/themes/foce-child/medias/cat2.png");
+    position: absolute;
+    left: 20em;
+    top: -4em;
+    animation: float 6s 200ms infinite ease-in-out;
+  }
+  &::after {
+    content: url("http://koukaki.local/wp-content/themes/foce-child/medias/flower.png");
+    position: absolute;
+    right: 28em;
+    top: 1em;
+    width: 70.76px;
+    height: 70.76px;
+    animation: rotateModalFlowers var(--rotate) linear infinite;
+  }
+}
+.modal__content--characters {
+  &::after {
+    content: url("http://koukaki.local/wp-content/themes/foce-child/medias/Random Flower.png");
+    position: absolute;
+    left: 59em;
+    top: -2em;
+    width: 75.75px;
+    height: 74.53px;
+    animation: rotateModalFlowers var(--rotate) linear infinite;
+  }
+}
+.site-footer {
+  &::after {
+    animation: rotating var(--rotate) linear infinite;
+    width: 173px;
+    height: 173px;
+  }
+  ul {
+    &::after {
+      animation: rotating var(--rotate) linear infinite;
+    }
+  }
+  &::before {
+    animation: rotating var(--rotate) linear infinite;
+    width: 154px;
+    height: 154px;
+  }
+}
+.story__article {
+  &::after {
+    animation: rotating var(--rotate) linear infinite;
+    width: 188px;
+    height: 188px;
+  }
+}
+#studio {
+  h2 {
+    &::before {
+      animation: rotating var(--rotate) linear infinite;
+      width: 203px;
+      height: 203px;
+    }
+    &::after {
+      animation: rotating var(--rotate) linear infinite;
+      width: 109px;
+      height: 109px;
+    }
+  }
+}
 .fleur {
   animation: rotating var(--rotate) linear infinite;
 }
-
-// Ajustements pour qu'elles puissent tourner rond */
-
-/* Sunflower.png */
-.story h2::after,
-.site-footer::before {
-  width: 154px;
-  height: 154px;
-}
-
-/* random_flower.png */
-#studio h2::before {
-  width: 203px;
-  height: 203px;
-}
-
-/* flower.png */
-#studio h2::after {
-  width: 109px;
-  height: 109px;
-}
-
-/* orchid.png */
-.site-footer::after {
-  width: 173px;
-  height: 173px;
-}
-
-/* Hibiscus.png */
-.story__article::after {
-  width: 188px;
-  height: 188px;
-}
-
-/* Animation de rotation pour les fleurs modal */
-@keyframes rotateModalFlowers {
-  100% {
-    transform: rotate(1turn);
-  }
-}
-
-.modal__content::after,
-.modal__content--story::after,
-.modal__content--characters::after,
-.modal__content--place::after,
-.modal__content--footer::after {
-  animation: rotateModalFlowers var(--rotate) linear infinite;
-}
-
-/* Mobile */
-
-/* CSS pour masquer la vidéo sur les appareils mobiles */
 @media (max-width: 934px) {
   .banner__video {
     display: none !important;
   }
-  #place .place--big_cloud,
-  #place .place--little_cloud,
-  .site-footer::after,
-  .site-footer ul::after,
-  .story__article::after,
-  #studio h2::before,
-  #studio h2::after,
-  .story h2::after,
-  .fleur,
-  .modal__content::after,
-  .modal__content--story::after,
-  .modal__content--characters::after,
-  .modal__content--place::after,
-  .modal__content--footer::after,
-  .modal__content--open::after,
-  .modal__content--footer::before,
-  .modal__content--place::before,
-  .modal__content--story::before {
+  #place {
+    .place--big_cloud {
+      display: none;
+    }
+    .place--little_cloud {
+      display: none;
+    }
+  }
+  .site-footer {
+    &::after {
+      display: none;
+    }
+    ul {
+      &::after {
+        display: none;
+      }
+    }
+  }
+  .story__article {
+    &::after {
+      display: none;
+    }
+  }
+  #studio {
+    h2 {
+      &::before {
+        display: none;
+      }
+      &::after {
+        display: none;
+      }
+    }
+  }
+  .story {
+    h2 {
+      &::after {
+        display: none;
+      }
+    }
+    #characters {
+      height: 500px;
+    }
+  }
+  .fleur {
     display: none;
   }
-
+  .modal__content {
+    &::after {
+      display: none;
+    }
+  }
+  .modal__content--story {
+    &::after {
+      display: none;
+    }
+    &::before {
+      display: none;
+    }
+  }
+  .modal__content--characters {
+    &::after {
+      display: none;
+    }
+  }
+  .modal__content--place {
+    &::after {
+      display: none;
+    }
+    &::before {
+      display: none;
+    }
+  }
+  .modal__content--footer {
+    &::after {
+      display: none;
+    }
+    &::before {
+      display: none;
+    }
+  }
+  .modal__content--open {
+    &::after {
+      display: none;
+    }
+  }
   .swiper-container {
     width: 100vw;
     overflow: hidden;
     margin-top: 50px;
     margin-bottom: 0px;
   }
-
   figcaption {
     padding-bottom: 150px;
   }
-
-  .story #characters {
-    height: 500px;
-  }
-}
-
-@media all and (max-width: 934px) {
   .main-navigation {
     height: 80px;
+    ul {
+      display: flex !important;
+    }
   }
-
   .banner__logo {
     top: -8vw;
     left: 30vw;
   }
-
   .banner__background {
     width: 350px;
   }
-
-  .main-navigation ul {
-    display: flex !important;
-  }
-
   h2 {
     font-size: 2.4rem;
-  } 
-
+  }
   h3 {
     font-size: 2rem;
-  }  
-
-  .nomination h3 {  
-    font-size: 1.4rem;
-    line-height: 1.6rem;
+  }
+  .nomination {
+    h3 {
+      font-size: 1.4rem;
+      line-height: 1.6rem;
+    }
   }
 }
