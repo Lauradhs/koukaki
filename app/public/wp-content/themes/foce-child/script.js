@@ -91,25 +91,24 @@ window.addEventListener("scroll", () => {
 
 // Effet parallax vidéo et logo
 
-window.addEventListener('scroll', function () {
-  const parallaxBack = document.querySelector('.parallax');
+window.addEventListener("scroll", function () {
+  const parallaxBack = document.querySelector(".parallax");
   const scrollValue = window.scrollY;
 
-  // Définissez la valeur de seuil à partir de laquelle vous souhaitez inverser la direction du logo
+  // Défini la valeur de seuil à partir de laquelle vous souhaitez inverser la direction du logo
   const seuil = 450;
 
-  // Vérifiez si scrollValue dépasse le seuil
+  // Vérifie si scrollValue dépasse le seuil
   if (scrollValue > seuil) {
-    // Inversez la direction en faisant remonter le logo
-    parallaxBack.style.transform = `translateY(-${(scrollValue - seuil) * 0.5}px)`;
+    // Inverse la direction en faisant remonter le logo
+    parallaxBack.style.transform = `translateY(-${
+      (scrollValue - seuil) * 0.5
+    }px)`;
   } else {
-    // Faites descendre le logo si scrollValue est en dessous du seuil
+    // Fait descendre le logo si scrollValue est en dessous du seuil
     parallaxBack.style.transform = `translateY(${scrollValue * 0.5}px)`;
   }
 });
-
-
-
 
 // swiper
 

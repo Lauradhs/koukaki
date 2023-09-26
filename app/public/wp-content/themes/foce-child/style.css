@@ -1,7 +1,9 @@
+@charset "UTF-8";
 /*
 Theme Name: foce-child
 Template: foce
 */
+/* Pour faire apparaitre les éléments en montant et avec augmentatation de l'opacité */
 @keyframes move-up {
   0% {
     transform: translateY(600px);
@@ -31,6 +33,7 @@ Template: foce
     visibility: visible;
   }
 }
+/* Pour faire flotter les éléments */
 @keyframes float {
   0% {
     transform: translate3d(6px, 6px, 0);

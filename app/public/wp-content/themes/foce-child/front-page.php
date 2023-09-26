@@ -11,8 +11,10 @@ get_header();
                 type="video/mp4">
         </video>
         <div class="parallax">
-        <img class="banner__logo hidden" src="<?php echo get_theme_file_uri() . '/medias/Image logo en paralax.png'; ?>"
-            alt="Logo fleurs d'oranger & chats errants"></div>
+            <img class="banner__logo hidden"
+                src="<?php echo get_theme_file_uri() . '/medias/Image logo en paralax.png'; ?>"
+                alt="Logo fleurs d'oranger & chats errants">
+        </div>
     </section>
 
     <section id="story" class="story hidden">
@@ -31,8 +33,7 @@ get_header();
         <article id="place" class="place hidden">
             <img class="place--big_cloud" src="<?php echo get_theme_file_uri() . '/medias/big_cloud.png'; ?>"
                 alt="Gros nuage qui passe">
-            <img class="place--little_cloud"
-                src="<?php echo get_theme_file_uri() . '/medias/little_cloud.png'; ?>"
+            <img class="place--little_cloud" src="<?php echo get_theme_file_uri() . '/medias/little_cloud.png'; ?>"
                 alt="Petit nuage qui passe">
             <div class="place">
                 <h3><span class="place__title slide1 hidden">Le Lieu</span></h3>
